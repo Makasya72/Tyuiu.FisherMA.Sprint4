@@ -6,11 +6,6 @@ namespace Tyuiu.FisherMA.Sprint4.Task1.V19.Lib
     {
         public int Calculate(int[] array)
         {
-            throw new NotImplementedException();
-        }
-
-        public int GetSumEven(int[] array)
-        {
             int sum = 0;
             for (int i = 0; i < array.Length; i++)
             {
