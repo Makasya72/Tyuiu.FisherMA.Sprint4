@@ -4,7 +4,6 @@ namespace Tyuiu.FisherMA.Sprint4.Task7.V10.Lib
 {
     public class DataService : ISprint4Task7V10
     {
-        
         public int[,] ConvertStringToMatrix(string input, int rows, int cols)
         {
             int[,] matrix = new int[rows, cols];
@@ -22,7 +21,6 @@ namespace Tyuiu.FisherMA.Sprint4.Task7.V10.Lib
             return matrix;
         }
 
- 
         public int Calculate(int[,] matrix)
         {
             int sum = 0;
@@ -39,7 +37,6 @@ namespace Tyuiu.FisherMA.Sprint4.Task7.V10.Lib
             return sum;
         }
 
-        
         public int Calculate(int n, int m, string value)
         {
             throw new NotImplementedException();
