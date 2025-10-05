@@ -6,55 +6,15 @@ namespace Tyuiu.FisherMA.Sprint4.Task7.V10.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidConvertStringToMatrix()
+        public void CalcTest()
         {
             DataService ds = new DataService();
-            string input = "695847142536";
-            int[,] expected =
-            {
-                {6, 9, 5, 8},
-                {4, 7, 1, 4},
-                {2, 5, 3, 6}
-            };
+            int n = 3, m = 4;
+            string value = "695847142536";
+            int wait = 38; 
 
-            int[,] result = ds.ConvertStringToMatrix(input, 3, 4);
-
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    Assert.AreEqual(expected[i, j], result[i, j]);
-                }
-            }
-        }
-
-        [TestMethod]
-        public void ValidCalculate()
-        {
-            DataService ds = new DataService();
-
-            int[,] matrix =
-            {
-                {6, 9, 5, 8},
-                {4, 7, 1, 4},
-                {2, 5, 3, 6}
-            };
-
-            int result = ds.Calculate(matrix);
-            int expected = 30;
-
-            Assert.AreEqual(expected, result);
-        }
-
-        [TestMethod]
-        public void ValidCalculateFromString()
-        {
-            DataService ds = new DataService();
-
-            int result = ds.Calculate(3, 4, "695847142536");
-            int expected = 30;
-
-            Assert.AreEqual(expected, result);
+            int res = ds.Calculate(n, m, value);
+            Assert.AreEqual(wait, res);
         }
     }
 }

@@ -8,43 +8,42 @@ namespace Tyuiu.FisherMA.Sprint4.Task7.V10
         {
             DataService ds = new DataService();
 
-            Console.Title = "Спринт #4 | Выполнил: Фишер М. A. | ИИПб-25-1";
+            Console.Title = "Спринт #4 | Выполнил: Фишер М. А | ИИПб-25-1";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
-            Console.WriteLine("* Тема: Преобразование строки в двумерный массив                          *");
+            Console.WriteLine("* Тема: Добавление к решению итоговых проектов по спринту                 *");
             Console.WriteLine("* Задание #7                                                              *");
             Console.WriteLine("* Вариант #10                                                             *");
             Console.WriteLine("* Выполнил: Фишер Максим Алексеевич | ИИПб-25-1                           *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Дана строка из одноразрядных цифр: \"695847142536\".                     *");
-            Console.WriteLine("* Преобразовать её в матрицу 3x4 и подсчитать сумму нечётных чисел.       *");
+            Console.WriteLine("* Дана строка из одноразрядных цифр \"695847142536\".                      *");
+            Console.WriteLine("* Преобразуйте ее в матрицу 3 на 4 и подсчитайте сумму нечетных чисел.    *");
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            string input = "695847142536";
-            int rows = 3;
-            int cols = 4;
+            string value = "695847142536";
+            int n = 3, m = 4;
+            int index = 0;
 
-            int[,] matrix = ds.ConvertStringToMatrix(input, rows, cols);
-
-            Console.WriteLine("* Матрица 3x4:                                                            *");
-            Console.WriteLine("***************************************************************************");
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            Console.WriteLine("Массив:");
+            for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                for (int j = 0; j < m; j++)
                 {
-                    Console.Write(matrix[i, j] + "\t");
+                    Console.Write($"{value[index]} \t");
+                    index++;
                 }
                 Console.WriteLine();
             }
 
-            int result = ds.Calculate(matrix);
-
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine($"Сумма нечётных чисел: {result}");
-            Console.ReadKey();
+
+            int res = ds.Calculate(n, m, value);
+            Console.WriteLine($"Сумма нечётных чисел: {res}");
         }
     }
 }
