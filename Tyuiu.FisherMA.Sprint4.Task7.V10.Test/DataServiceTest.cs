@@ -41,7 +41,18 @@ namespace Tyuiu.FisherMA.Sprint4.Task7.V10.Test
             };
 
             int result = ds.Calculate(matrix);
-            int expected = 30; 
+            int expected = 30;
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void ValidCalculateFromString()
+        {
+            DataService ds = new DataService();
+
+            int result = ds.Calculate(3, 4, "695847142536");
+            int expected = 30;
 
             Assert.AreEqual(expected, result);
         }

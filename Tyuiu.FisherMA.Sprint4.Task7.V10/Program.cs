@@ -22,7 +22,10 @@ namespace Tyuiu.FisherMA.Sprint4.Task7.V10
             Console.WriteLine("***************************************************************************");
 
             string input = "695847142536";
-            int[,] matrix = ds.ConvertStringToMatrix(input, 3, 4);
+            int rows = 3;
+            int cols = 4;
+
+            int[,] matrix = ds.ConvertStringToMatrix(input, rows, cols);
 
             Console.WriteLine("* Матрица 3x4:                                                            *");
             Console.WriteLine("***************************************************************************");

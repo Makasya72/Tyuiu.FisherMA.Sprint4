@@ -13,8 +13,11 @@ namespace Tyuiu.FisherMA.Sprint4.Task7.V10.Lib
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    matrix[i, j] = int.Parse(input[index].ToString());
-                    index++;
+                    if (index < input.Length)
+                    {
+                        matrix[i, j] = int.Parse(input[index].ToString());
+                        index++;
+                    }
                 }
             }
 
@@ -24,9 +27,12 @@ namespace Tyuiu.FisherMA.Sprint4.Task7.V10.Lib
         public int Calculate(int[,] matrix)
         {
             int sum = 0;
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
+
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                for (int j = 0; j < cols; j++)
                 {
                     if (matrix[i, j] % 2 != 0)
                     {
@@ -34,12 +40,14 @@ namespace Tyuiu.FisherMA.Sprint4.Task7.V10.Lib
                     }
                 }
             }
+
             return sum;
         }
 
         public int Calculate(int n, int m, string value)
         {
-            throw new NotImplementedException();
+            int[,] matrix = ConvertStringToMatrix(value, n, m);
+            return Calculate(matrix);
         }
     }
 }
