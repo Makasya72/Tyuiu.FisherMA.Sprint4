@@ -30,5 +30,10 @@ namespace Tyuiu.FisherMA.Sprint4.Task7.V10.Lib
 
             return sum;
         }
+
+        public int Calculate(int n, int m, string value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
